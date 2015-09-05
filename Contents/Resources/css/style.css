@@ -1,0 +1,11 @@
+body {
+	font-family: "Menlo", monospace;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+p.message {
+  color: red;
+}
