@@ -6,19 +6,19 @@ require_relative '../bundle/bundler/setup'
 require 'repla'
 require 'repla/logger'
 
-require WebConsole::shared_test_resource("ruby/test_constants")
-require WebConsole::Tests::TEST_HELPER_FILE
+require Repla::shared_test_resource("ruby/test_constants")
+require Repla::Tests::TEST_HELPER_FILE
 
 require_relative "lib/test_helper"
 require_relative "../lib/controller"
 
 class TestView < Test::Unit::TestCase
-  MESSAGE_PREFIX = WebConsole::Logger::MESSAGE_PREFIX
-  ERROR_PREFIX = WebConsole::Logger::ERROR_PREFIX
+  MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
+  ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
 
   def setup
-    @controller = WebConsole::Log::Controller.new
-    @test_helper = WebConsole::Log::Tests::TestHelper.new(@controller.view)
+    @controller = Repla::Log::Controller.new
+    @test_helper = Repla::Log::Tests::TestHelper.new(@controller.view)
   end
   
   def teardown

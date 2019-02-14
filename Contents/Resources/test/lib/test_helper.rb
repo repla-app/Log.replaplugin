@@ -1,6 +1,6 @@
 require_relative "test_constants"
 
-module WebConsole::Log
+module Repla::Log
   module Tests
     class TestHelper
 

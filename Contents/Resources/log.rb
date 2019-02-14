@@ -5,7 +5,7 @@ require 'repla'
 
 require_relative "lib/controller"
 
-controller = WebConsole::Log::Controller.new
+controller = Repla::Log::Controller.new
 
 ARGF.each do |line|
   controller.parse_input(line)

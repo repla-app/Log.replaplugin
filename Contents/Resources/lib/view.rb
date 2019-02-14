@@ -1,7 +1,7 @@
 require_relative '../bundle/bundler/setup'
 
-module WebConsole::Log
-  class View < WebConsole::View
+module Repla::Log
+  class View < Repla::View
 
     ROOT_ACCESS_DIRECTORY = File.join(File.dirname(__FILE__), '../html')
     VIEW_TEMPLATE = File.join(ROOT_ACCESS_DIRECTORY, 'index.html')
