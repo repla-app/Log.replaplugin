@@ -3,11 +3,10 @@
 require "test/unit"
 
 require_relative '../bundle/bundler/setup'
-require 'repla'
 require 'repla/logger'
 
-require Repla::shared_test_resource("ruby/test_constants")
-require Repla::Tests::TEST_HELPER_FILE
+require 'repla/test'
+require Repla::Test::REPLA_FILE
 
 require_relative "lib/test_helper"
 require_relative "../lib/controller"

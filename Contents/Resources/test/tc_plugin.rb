@@ -5,11 +5,10 @@ require "test/unit"
 require_relative "lib/test_constants"
 
 require_relative '../bundle/bundler/setup'
-require 'repla'
 require 'repla/logger'
 
-require Repla::shared_test_resource("ruby/test_constants")
-require Repla::Tests::TEST_HELPER_FILE
+require 'repla/test'
+require Repla::Test::REPLA_FILE
 
 require_relative "lib/test_helper"
 
@@ -25,14 +24,14 @@ class TestPlugin < Test::Unit::TestCase
   end
 
   def teardown
-    Repla::Tests::Helper::quit
-    assert(!Repla::Tests::Helper::is_running, "The application should not be running.")
+    Repla::Test::Helper::quit
+    assert(!Repla::Test::Helper::is_running, "The application should not be running.")
   end
 
   # Tests
 
   def test_log_title
-    sleep Repla::Tests::TEST_PAUSE_TIME # Give the plugin time to finish running
+    sleep Repla::Test::TEST_PAUSE_TIME # Give the plugin time to finish running
     title = @window.do_javascript(TEST_TITLE_JAVASCRIPT)
     assert_equal(title, TEST_PLUGIN_NAME, "The title should equal the test html title.")
   end
@@ -43,7 +42,7 @@ class TestPlugin < Test::Unit::TestCase
     message = "Testing log error"
     input = ERROR_PREFIX + message
     @window.read_from_standard_input(input + "\n")
-    sleep Repla::Tests::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
     test_message = @test_helper.last_log_message()
     assert_equal(message, test_message, "The messages should match")
     test_class = @test_helper.last_log_class()
@@ -53,7 +52,7 @@ class TestPlugin < Test::Unit::TestCase
     message = "Testing log message"
     input = MESSAGE_PREFIX + message
     @window.read_from_standard_input(input + "\n")
-    sleep Repla::Tests::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
     test_message = @test_helper.last_log_message()
     assert_equal(message, test_message, "The messages should match")
     test_class = @test_helper.last_log_class()
@@ -61,7 +60,7 @@ class TestPlugin < Test::Unit::TestCase
 
     # Test No Prefix
     @window.read_from_standard_input("Testing no prefix" + "\n")
-    sleep Repla::Tests::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
     test_message = @test_helper.last_log_message()
     assert_equal(message, test_message, "The messages should match")
     test_class = @test_helper.last_log_class()
@@ -69,7 +68,7 @@ class TestPlugin < Test::Unit::TestCase
 
     # Test Blank Spaces
     @window.read_from_standard_input("  \t" + "\n")
-    sleep Repla::Tests::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
     test_message = @test_helper.last_log_message()
     assert_equal(message, test_message, "The messages should match")
     test_class = @test_helper.last_log_class()
@@ -77,7 +76,7 @@ class TestPlugin < Test::Unit::TestCase
 
     # Test Empty String
     @window.read_from_standard_input("" + "\n")
-    sleep Repla::Tests::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
     test_message = @test_helper.last_log_message()
     assert_equal(message, test_message, "The messages should match")
     test_class = @test_helper.last_log_class()
