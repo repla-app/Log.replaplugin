@@ -15,7 +15,8 @@ namespace :log do
   end
 
   task test_controller: [:test_view] do
-    controller_tests_file = File.join(File.dirname(__FILE__), 'tc_controller.rb')
+    controller_tests_file = File.join(File.dirname(__FILE__),
+                                      'tc_controller.rb')
     ruby Shellwords.escape(controller_tests_file)
   end
 

@@ -11,6 +11,7 @@ require Repla::Test::REPLA_FILE
 
 require_relative '../lib/view'
 
+# Test view
 class TestView < Test::Unit::TestCase
   def setup
     @view = Repla::Log::View.new

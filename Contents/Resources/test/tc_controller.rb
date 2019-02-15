@@ -11,6 +11,7 @@ require Repla::Test::REPLA_FILE
 require_relative 'lib/test_helper'
 require_relative '../lib/controller'
 
+# Test view
 class TestView < Test::Unit::TestCase
   MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
   ERROR_PREFIX = Repla::Logger::ERROR_PREFIX

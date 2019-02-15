@@ -13,6 +13,7 @@ require Repla::Test::REPLA_FILE
 
 require_relative 'lib/test_helper'
 
+# Test plugin
 class TestPlugin < Test::Unit::TestCase
   MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
   ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
@@ -26,7 +27,7 @@ class TestPlugin < Test::Unit::TestCase
 
   def teardown
     Repla::Test::Helper.quit
-    assert(!Repla::Test::Helper.app_running?, 'The application should not be running.')
+    assert(!Repla::Test::Helper.app_running?)
   end
 
   # Tests
@@ -34,7 +35,7 @@ class TestPlugin < Test::Unit::TestCase
   def test_log_title
     sleep Repla::Test::TEST_PAUSE_TIME # Give the plugin time to finish running
     title = @window.do_javascript(TEST_TITLE_JAVASCRIPT)
-    assert_equal(title, TEST_PLUGIN_NAME, 'The title should equal the test html title.')
+    assert_equal(title, TEST_PLUGIN_NAME)
   end
 
   def test_log
