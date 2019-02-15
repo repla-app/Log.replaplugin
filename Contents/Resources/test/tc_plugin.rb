@@ -8,6 +8,7 @@ require_relative '../bundle/bundler/setup'
 require 'repla/logger'
 
 require 'repla/test'
+require Repla::Test::HELPER_FILE
 require Repla::Test::REPLA_FILE
 
 require_relative "lib/test_helper"
@@ -24,8 +25,8 @@ class TestPlugin < Test::Unit::TestCase
   end
 
   def teardown
-    Repla::Test::Helper::quit
-    assert(!Repla::Test::Helper::is_running, "The application should not be running.")
+    Repla::Test::Helper.quit
+    assert(!Repla::Test::Helper.app_running?, "The application should not be running.")
   end
 
   # Tests
