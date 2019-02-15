@@ -1,4 +1,5 @@
 require_relative "test_constants"
+require 'repla/test'
 
 module Repla::Log
   module Tests
