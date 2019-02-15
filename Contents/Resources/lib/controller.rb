@@ -2,29 +2,30 @@ require_relative '../bundle/bundler/setup'
 require 'repla/logger'
 require_relative 'view'
 
-module Repla::Log
-  class Controller < Repla::Controller
-    MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
-    ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
+module Repla
+  module Log
+    # Controller
+    class Controller < Repla::Controller
+      MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
+      ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
 
-    def initialize
-      @view = View.new
-    end
-
-    def parse_input(input)
-      message = input.dup
-      message.sub!(/^\s*$\n/, '') # Don't process blank lines
-      if message =~ /^#{MESSAGE_PREFIX}/
-        message[MESSAGE_PREFIX] = ''
-        message.rstrip!
-        view.log_message(message) unless message.empty?
-      elsif message =~ /^#{ERROR_PREFIX}/
-        message[ERROR_PREFIX] = ''
-        message.rstrip!
-        view.log_error(message) unless message.empty?
+      def initialize
+        @view = View.new
       end
 
+      def parse_input(input)
+        message = input.dup
+        message.sub!(/^\s*$\n/, '') # Don't process blank lines
+        if message =~ /^#{MESSAGE_PREFIX}/
+          message[MESSAGE_PREFIX] = ''
+          message.rstrip!
+          view.log_message(message) unless message.empty?
+        elsif message =~ /^#{ERROR_PREFIX}/
+          message[ERROR_PREFIX] = ''
+          message.rstrip!
+          view.log_error(message) unless message.empty?
+        end
+      end
     end
-
   end
 end

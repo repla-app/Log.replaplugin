@@ -3,7 +3,7 @@
 require_relative 'bundle/bundler/setup'
 require 'repla'
 
-require_relative "lib/controller"
+require_relative 'lib/controller'
 
 controller = Repla::Log::Controller.new
 
