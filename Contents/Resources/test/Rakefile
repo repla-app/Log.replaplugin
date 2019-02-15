@@ -1,8 +1,8 @@
 require 'shellwords'
 require_relative '../bundle/bundler/setup'
-require 'webconsole'
-require WebConsole::shared_test_resource("ruby/test_constants")
-require WebConsole::Tests::TEST_HELPER_FILE
+require 'repla/test'
+require Repla::Test::REPLA_FILE
+require Repla::Test::HELPER_FILE
 
 task :default => ['log:tests']
 
@@ -26,6 +26,6 @@ namespace :log do
   end
 
   task :clean_up => [:test_plugin] do
-    WebConsole::Tests::Helper::quit
+    Repla::Test::Helper.quit
   end
 end

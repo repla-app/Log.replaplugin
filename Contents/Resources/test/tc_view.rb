@@ -3,20 +3,19 @@
 require "test/unit"
 
 require_relative '../bundle/bundler/setup'
-require 'webconsole'
 
 require_relative "lib/test_helper"
 
-require WebConsole::shared_test_resource("ruby/test_constants")
-require WebConsole::Tests::TEST_HELPER_FILE
+require 'repla/test'
+require Repla::Test::REPLA_FILE
 
 require_relative "../lib/view"
 
 class TestView < Test::Unit::TestCase
 
   def setup
-    @view = WebConsole::Log::View.new
-    @test_helper = WebConsole::Log::Tests::TestHelper.new(@view)
+    @view = Repla::Log::View.new
+    @test_helper = Repla::Log::Tests::TestHelper.new(@view)
   end
   
   def teardown

@@ -1,11 +1,11 @@
 require_relative '../bundle/bundler/setup'
-require 'webconsole/logger'
+require 'repla/logger'
 require_relative 'view'
 
-module WebConsole::Log
-  class Controller < WebConsole::Controller
-    MESSAGE_PREFIX = WebConsole::Logger::MESSAGE_PREFIX
-    ERROR_PREFIX = WebConsole::Logger::ERROR_PREFIX
+module Repla::Log
+  class Controller < Repla::Controller
+    MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
+    ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
 
     def initialize
       @view = View.new
