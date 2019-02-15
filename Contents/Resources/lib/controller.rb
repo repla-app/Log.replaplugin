@@ -23,8 +23,6 @@ module Repla::Log
         message.rstrip!
         view.log_error(message) unless message.empty?
       end
-
     end
-
   end
 end
