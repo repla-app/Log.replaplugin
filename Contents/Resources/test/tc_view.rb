@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 
 require_relative '../bundle/bundler/setup'
 
@@ -12,7 +12,7 @@ require Repla::Test::REPLA_FILE
 require_relative '../lib/view'
 
 # Test view
-class TestView < Test::Unit::TestCase
+class TestView < Minitest::Test
   def setup
     @view = Repla::Log::View.new
     @test_helper = Repla::Log::Tests::TestHelper.new(@view)

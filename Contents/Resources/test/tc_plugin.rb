@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 
 require_relative 'lib/test_constants'
 
@@ -14,7 +14,7 @@ require Repla::Test::REPLA_FILE
 require_relative 'lib/test_helper'
 
 # Test plugin
-class TestPlugin < Test::Unit::TestCase
+class TestPlugin < Minitest::Test
   MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
   ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
 
@@ -26,8 +26,7 @@ class TestPlugin < Test::Unit::TestCase
   end
 
   def teardown
-    Repla::Test::Helper.quit
-    assert(!Repla::Test::Helper.app_running?)
+    @window.close
   end
 
   # Tests
