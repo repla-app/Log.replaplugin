@@ -25,6 +25,10 @@ class TestPlugin < Minitest::Test
     @test_helper = Repla::Log::Tests::TestHelper.new(@window)
   end
 
+  def teardown
+    @window.close
+  end
+
   # Tests
 
   def test_log_title
