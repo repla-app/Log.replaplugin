@@ -25,11 +25,6 @@ class TestPlugin < Test::Unit::TestCase
     @test_helper = Repla::Log::Tests::TestHelper.new(@window)
   end
 
-  def teardown
-    Repla::Test::Helper.quit
-    assert(!Repla::Test::Helper.app_running?)
-  end
-
   # Tests
 
   def test_log_title
