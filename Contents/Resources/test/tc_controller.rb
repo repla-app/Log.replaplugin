@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 
 require_relative '../bundle/bundler/setup'
 require 'repla/logger'
@@ -12,7 +12,7 @@ require_relative 'lib/test_helper'
 require_relative '../lib/controller'
 
 # Test view
-class TestView < Test::Unit::TestCase
+class TestView < Minitest::Test
   MESSAGE_PREFIX = Repla::Logger::MESSAGE_PREFIX
   ERROR_PREFIX = Repla::Logger::ERROR_PREFIX
 
