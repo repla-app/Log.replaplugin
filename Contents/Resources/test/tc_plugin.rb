@@ -32,8 +32,11 @@ class TestPlugin < Minitest::Test
   # Tests
 
   def test_log_title
-    sleep Repla::Test::TEST_PAUSE_TIME # Give the plugin time to finish running
-    title = @window.do_javascript(TEST_TITLE_JAVASCRIPT)
+    title = nil
+    Repla::Test.block_until do
+      title = @window.do_javascript(TEST_TITLE_JAVASCRIPT)
+      title == TEST_PLUGIN_NAME
+    end
     assert_equal(title, TEST_PLUGIN_NAME)
   end
 
