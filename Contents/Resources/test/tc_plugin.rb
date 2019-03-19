@@ -45,44 +45,50 @@ class TestPlugin < Minitest::Test
     message = 'Testing log error'
     input = ERROR_PREFIX + message
     @window.read_from_standard_input(input + "\n")
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
-    test_message = @test_helper.last_log_message
-    assert_equal(message, test_message, 'The messages should match')
+    test_message = nil
+    Repla::Test.block_until do
+      test_message = @test_helper.last_log_message
+      test_message == message
+    end
+    assert_equal(message, test_message)
     test_class = @test_helper.last_log_class
-    assert_equal('error', test_class, 'The classes should match')
+    assert_equal('error', test_class)
 
     # Test Message
     message = 'Testing log message'
     input = MESSAGE_PREFIX + message
     @window.read_from_standard_input(input + "\n")
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
-    test_message = @test_helper.last_log_message
-    assert_equal(message, test_message, 'The messages should match')
+    test_message = nil
+    Repla::Test.block_until do
+      test_message = @test_helper.last_log_message
+      test_message == message
+    end
+    assert_equal(message, test_message)
     test_class = @test_helper.last_log_class
-    assert_equal('message', test_class, 'The classes should match')
+    assert_equal('message', test_class)
 
     # Test No Prefix
     @window.read_from_standard_input('Testing no prefix' + "\n")
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME
     test_message = @test_helper.last_log_message
-    assert_equal(message, test_message, 'The messages should match')
+    assert_equal(message, test_message)
     test_class = @test_helper.last_log_class
-    assert_equal('message', test_class, 'The classes should match')
+    assert_equal('message', test_class)
 
     # Test Blank Spaces
     @window.read_from_standard_input("  \t" + "\n")
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME
     test_message = @test_helper.last_log_message
-    assert_equal(message, test_message, 'The messages should match')
+    assert_equal(message, test_message)
     test_class = @test_helper.last_log_class
-    assert_equal('message', test_class, 'The classes should match')
+    assert_equal('message', test_class)
 
     # Test Empty String
     @window.read_from_standard_input('' + "\n")
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
+    sleep Repla::Test::TEST_PAUSE_TIME
     test_message = @test_helper.last_log_message
-    assert_equal(message, test_message, 'The messages should match')
+    assert_equal(message, test_message)
     test_class = @test_helper.last_log_class
-    assert_equal('message', test_class, 'The classes should match')
+    assert_equal('message', test_class)
   end
 end
