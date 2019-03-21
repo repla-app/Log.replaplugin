@@ -4,7 +4,7 @@ module Repla
   module Log
     # View
     class View < Repla::View
-      ROOT_ACCESS_DIRECTORY = File.join(File.dirname(__FILE__), '../html')
+      ROOT_ACCESS_DIRECTORY = File.join(__dir__, '../html')
       VIEW_TEMPLATE = File.join(ROOT_ACCESS_DIRECTORY, 'index.html')
 
       def initialize
