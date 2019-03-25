@@ -13,11 +13,8 @@ module Repla
         self.root_access_directory_path = File.expand_path(
           ROOT_ACCESS_DIRECTORY
         )
-        if dark_mode
-          load_file(DARK_VIEW_TEMPLATE)
-        else
-          load_file(VIEW_TEMPLATE)
-        end
+        template = dark_mode ? DARK_VIEW_TEMPLATE : VIEW_TEMPLATE
+        load_file(template)
       end
 
       def log_error(message)
