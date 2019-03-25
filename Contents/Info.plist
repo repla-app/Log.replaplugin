@@ -12,5 +12,7 @@
 	<integer>0</integer>
 	<key>WCHidden</key>
 	<integer>1</integer>
+	<key>WCTransparentBackground</key>
+	<integer>1</integer>
 </dict>
 </plist>
