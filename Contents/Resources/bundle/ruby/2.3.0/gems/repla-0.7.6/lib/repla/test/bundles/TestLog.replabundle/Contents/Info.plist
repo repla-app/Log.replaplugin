@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>WCName</key>
-	<string>Log</string>
+	<string>TestLog</string>
 	<key>WCCommand</key>
-	<string>log.rb</string>
+	<string>test_log.rb</string>
 	<key>WCUUID</key>
-	<string>53AF78BD-DBEE-4C5A-A887-E20AF47C8F59</string>
+	<string>7A95638E-798D-437C-9404-08E7DC68655B</string>
 	<key>WCEditable</key>
 	<integer>0</integer>
-	<key>WCHidden</key>
+	<key>WCDebugModeEnabled</key>
 	<integer>1</integer>
-	<key>WCTransparentBackground</key>
+	<key>WCAutoShowLog</key>
 	<integer>1</integer>
 </dict>
 </plist>

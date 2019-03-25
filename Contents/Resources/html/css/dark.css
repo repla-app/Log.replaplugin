@@ -1,10 +1,11 @@
 body {
   font-family: "Menlo", monospace;
-  background: transparent;
+  background-color: transparent;
 }
 
 p {
   margin-bottom: 0;
+  color: white;
 }
 
 p.error {

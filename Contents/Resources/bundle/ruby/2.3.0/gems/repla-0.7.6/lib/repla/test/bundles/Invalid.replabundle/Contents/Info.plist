@@ -3,16 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>WCName</key>
-	<string>Log</string>
+	<string>Invalid</string>
 	<key>WCCommand</key>
-	<string>log.rb</string>
+	<string>invalid path</string>
 	<key>WCUUID</key>
-	<string>53AF78BD-DBEE-4C5A-A887-E20AF47C8F59</string>
+	<string>CB5617FF-F06C-4137-8C3A-8EDC959F3F44</string>
 	<key>WCEditable</key>
 	<integer>0</integer>
-	<key>WCHidden</key>
-	<integer>1</integer>
-	<key>WCTransparentBackground</key>
-	<integer>1</integer>
 </dict>
 </plist>
