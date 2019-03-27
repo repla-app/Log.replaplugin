@@ -22,7 +22,7 @@ class TestPlugin < Minitest::Test
     Repla.load_plugin(TEST_PLUGIN_PATH)
     window_id = Repla.run_plugin(TEST_PLUGIN_NAME, TEST_PLUGIN_PATH)
     @window = Repla::Window.new(window_id)
-    @test_helper = Repla::Log::Tests::TestHelper.new(@window)
+    @test_helper = Repla::Log::Test::TestHelper.new(@window)
   end
 
   def teardown

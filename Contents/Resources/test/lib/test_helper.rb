@@ -3,7 +3,7 @@ require 'repla/test'
 
 module Repla
   module Log
-    module Tests
+    module Test
       # Test helper
       class TestHelper
         def initialize(view)

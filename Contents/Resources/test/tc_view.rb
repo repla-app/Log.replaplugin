@@ -15,7 +15,7 @@ require_relative '../lib/view'
 class TestView < Minitest::Test
   def setup
     @view = Repla::Log::View.new
-    @test_helper = Repla::Log::Tests::TestHelper.new(@view)
+    @test_helper = Repla::Log::Test::TestHelper.new(@view)
   end
 
   def teardown
