@@ -10,3 +10,9 @@ p {
 p.error {
   color: red;
 }
+
+@media (prefers-color-scheme: dark) {
+  p {
+    color: white;
+  }
+}
