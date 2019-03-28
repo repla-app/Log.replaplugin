@@ -18,7 +18,7 @@ class TestView < Minitest::Test
 
   def setup
     @controller = Repla::Log::Controller.new
-    @test_helper = Repla::Log::Tests::TestHelper.new(@controller.view)
+    @test_helper = Repla::Log::Test::TestHelper.new(@controller.view)
   end
 
   def teardown
