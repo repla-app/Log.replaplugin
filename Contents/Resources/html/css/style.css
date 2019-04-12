@@ -7,10 +7,6 @@ p {
   margin-bottom: 0;
 }
 
-p.error {
-  color: red;
-}
-
 @media (prefers-color-scheme: dark) {
   p {
     color: white;
