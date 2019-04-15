@@ -7,3 +7,9 @@ p {
   margin-bottom: 0;
   color: white;
 }
+
+@media (prefers-color-scheme: light) {
+  p {
+    color: black;
+  }
+}
