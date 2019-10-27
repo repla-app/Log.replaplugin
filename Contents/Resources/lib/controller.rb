@@ -16,11 +16,11 @@ module Repla
       def parse_input(input)
         message = input.dup
         message.sub!(/^\s*$\n/, '') # Don't process blank lines
-        if message.match(/^#{MESSAGE_PREFIX}/)
+        if message.match?(/^#{MESSAGE_PREFIX}/)
           message[MESSAGE_PREFIX] = ''
           message.rstrip!
           view.log_message(message) unless message.empty?
-        elsif message.match(/^#{ERROR_PREFIX}/)
+        elsif message.match?(/^#{ERROR_PREFIX}/)
           message[ERROR_PREFIX] = ''
           message.rstrip!
           view.log_error(message) unless message.empty?
