@@ -25,6 +25,3 @@ AllCops:
     - '**/node_modules/**/*'
     - '**/vendor/**/*'
     - '**/bundle/**/*'
-Metrics/LineLength:
-  Exclude:
-    - 'Contents/Resources/log.rb'
