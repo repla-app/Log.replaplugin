@@ -4,10 +4,10 @@ ci: lint
 ac: autocorrect
 
 lint:
-	rubocop
+	git ls-files *.rb *Rakefile *Gemfile -z | xargs -0 rubocop
 
 autocorrect:
-	rubocop -a
+	git ls-files *.rb *Rakefile *Gemfile -z | xargs -0 rubocop -a
 
 test:
 	./Contents/Resources/test/run_tests.sh 
