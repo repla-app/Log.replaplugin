@@ -81,11 +81,10 @@ class TestView < Minitest::Test
 
     # Test Multiple Spaces
     message = '|   |'
-    expected = '|&nbsp;&nbsp;&nbsp;|'
     input = MESSAGE_PREFIX + message
     @controller.parse_input(input)
     test_message = @test_helper.last_log_message
-    assert_equal(expected, test_message, 'The messages should match')
+    assert_equal(message, test_message, 'The messages should match')
     test_class = @test_helper.last_log_class
     assert_equal('message', test_class, 'The classes should match')
   end

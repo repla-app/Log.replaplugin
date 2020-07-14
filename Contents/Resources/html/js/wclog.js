@@ -7,11 +7,11 @@ function message(message) {
 }
 
 function log(message, level) {
-	var source   = $("#log-template").html();
-	var template = Handlebars.compile(source);
-	var data = { 
-		message: message,
-    level: level
-	};
-	$(template(data)).appendTo("body");
+  var source = $("#log-template").html();
+  var template = Handlebars.compile(source);
+  var data = {
+    message: message,
+    level: level,
+  };
+  $(template(data)).appendTo("body");
 }

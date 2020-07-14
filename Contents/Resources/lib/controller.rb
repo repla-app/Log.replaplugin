@@ -18,7 +18,6 @@ module Repla
         # Don't process blank lines
         message.sub!(/^\s*$\n/, '')
         # Replace multiple spaces
-        message.gsub!(/ {2,}/) { '&nbsp;' * $&.length }
         if message.match?(/^#{MESSAGE_PREFIX}/)
           message[MESSAGE_PREFIX] = ''
           message.rstrip!
