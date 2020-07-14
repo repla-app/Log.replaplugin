@@ -15,7 +15,10 @@ module Repla
 
       def parse_input(input)
         message = input.dup
-        message.sub!(/^\s*$\n/, '') # Don't process blank lines
+        # Don't process blank lines
+        message.sub!(/^\s*$\n/, '')
+        # Replace multiple spaces
+        message.gsub!(/ {2,}/) { '&nbsp;' * $&.length }
         if message.match?(/^#{MESSAGE_PREFIX}/)
           message[MESSAGE_PREFIX] = ''
           message.rstrip!
