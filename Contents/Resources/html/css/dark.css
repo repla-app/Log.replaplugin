@@ -6,6 +6,7 @@ body {
 p {
   margin-bottom: 0;
   color: white;
+  white-space: pre;
 }
 
 @media (prefers-color-scheme: light) {
