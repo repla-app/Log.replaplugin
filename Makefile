@@ -1,16 +1,19 @@
-.PHONY: ci ac autocorrect lint loc
+.PHONY: ci ac autocorrect lint loc gem_install
 
-ci: lint
+ci: gem_install lint
 ac: autocorrect
 
 lint:
-	rubocop
+	bundle exec rubocop
 
 autocorrect:
-	rubocop -a
+	bundle exec rubocop -a
 
 test:
 	./Contents/Resources/test/run_tests.sh 
+
+gem_install:
+	bundle install --path vendor/bundle
 
 loc:
 	cloc --vcs=git --exclude-dir=bundle,.bundle --not-match-f='(handlebars.js|zepto.js|raster.css)'
