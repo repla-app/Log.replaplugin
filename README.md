@@ -1,1 +1,1 @@
-# Log [![Build Status](https://travis-ci.org/repla-app/Log.replaplugin.svg?branch=master)](https://travis-ci.org/repla-app/Log.replaplugin)
+# Log ![Status](https://github.com/repla-app/Log.replaplugin/actions/workflows/ci.yml/badge.svg)
